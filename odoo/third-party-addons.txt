@@ -15,4 +15,6 @@ public https://github.com/odoocker/server-tools.git sentry ${USE_SENTRY}
 
 # Public repositories
 
+public https://github.com/OCA/payroll.git payroll true payroll_account true payroll_hr_public_holidays true
+
 # Private repositories
