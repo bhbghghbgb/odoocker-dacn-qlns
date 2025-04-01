@@ -3,6 +3,8 @@
 ### note module ngoai da cai san
 
 -   `payroll` https://github.com/OCA/payroll
+-   `oh_appraisal` https://apps.odoo.com/apps/modules/17.0/oh_appraisal
+-   `hr_performance_evaluator` https://apps.odoo.com/apps/modules/17.0/hr_performance_evaluator
 
 ## cai odoo docker
 
@@ -19,6 +21,8 @@ cd odoocker-dacn-qlns
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 ```
 
+-   hoac mo file `up.sh`
+
 3. neu chay thanh cong, se co hang log:
 
 ```
@@ -27,7 +31,7 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 ![start compose ok](images/start-compose-ok.png)
 
-4. tim container `odoocker-odoo-1`, nhan vao `8069:8069` de mo len, hoac vo http://localhost:8069/
+4. tim container `odoocker-odoo-1` (hoac `odoo`), nhan vao `8069:8069` de mo len, hoac vo http://localhost:8069/, hoac mo file `open-browser-odoo.sh`
 
 5. master password la
 
@@ -70,6 +74,8 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -d
 ```
 
+-   hoac mo file `up-rebuild.sh`
+
 ### update odoo de hien module
 
 1. vo App `Settings` > `Activate the developer mode`
@@ -80,6 +86,12 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -
 
 3. search module (**xoa filter Apps**)
    ![search-module](images/search-module.png)
+
+## xem database
+
+-   [PgAdmin](#PgAdmin)
+
+## End of fork info.
 
 # Odoocker: The Ultimate Odoo Docker Framework
 
