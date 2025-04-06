@@ -1,0 +1,17 @@
+hr_expense Expenses
+hr_recruitment Recruitment
+website_slides eLearning
+hr_skills Skills Management
+website_hr_recruitment Online Jobs
+insurance_management_cybro Insurance Management
+payroll Payroll
+hr Employees
+bsi_employee_badges_and_rewards Employee Badges and Rewards
+hr_disciplinary_tracking Open HRMS Disciplinary Tracking
+project Project
+hr_contract Employee Contracts
+survey Surveys
+hr_holidays Time Off
+hr_payroll Payroll
+hr_attendance Attendances
+hr_appraisal Appraisals

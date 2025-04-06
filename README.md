@@ -6,7 +6,7 @@
 -   `oh_appraisal` https://apps.odoo.com/apps/modules/17.0/oh_appraisal
 -   `hr_performance_evaluator` https://apps.odoo.com/apps/modules/17.0/hr_performance_evaluator
 
-## cai odoo docker
+## cai odoo docker (community)
 
 1. Fork branch **17.0**, **autocrlf false** (neu xai windows):
 
@@ -86,6 +86,32 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -
 
 3. search module (**xoa filter Apps**)
    ![search-module](images/search-module.png)
+
+## cai odoo docker (enterprise)
+
+-   phai download source odoo enterprise (file .tar.gz) roi bo vao `odoo\enterprise\source_archives`
+-   vi du ten file hien tai la `odoo_17.0.2024-11-25.tar.gz`
+-   odoo enterprise chi khac community la co addons cua enterprise, nen script se tim copy thu muc `addons` vao `$ENTERPRISE_ADDONS`
+-   up compose len nho add override them file `docker-compose.enterprise.yml`: `-f docker-compose.enterprise.yml`, hoac mo file `up-e.sh`
+
+## auto install module dang su dung
+
+-   update file `odoo/dacn-auto-install.txt`, 1 module moi hang, `Technical name` (code name) phai ghi dau tien
+-   chay lenh nay de update list module vao thanh dependencies cua custom module `dacn-auto-install`
+
+```bash
+cd odoo
+python dacn-update-auto-install.py
+```
+
+-   rebuild container, update apps odoo
+-   tim module `dacn-auto-install` va active, no se cai het dependencies
+-   ![module auto install do an chuyen nganh](images/dacn-auto-install-module.png)
+-   **LUU Y**: file `dacn-auto-install.txt` hien tai co chua module enterprise, phai xai build enterprise neu ko se bi loi
+
+## chay nhieu compose stack (vua community vua enterprise)
+
+-   compose phai them `-p <project-name>` bat ky de tach biet ra, neu ko no se rebuild vao stack cu
 
 ## xem database
 

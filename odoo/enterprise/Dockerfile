@@ -24,7 +24,7 @@ RUN --mount=type=bind,src=./odoo/enterprise/source_archives,target=/tmp/enterpri
             odoo_tag_major=$(echo "$ODOO_TAG" | cut -d '.' -f 1); \
             unlimited_dir=$(find "/tmp/${archive_name}" -type d -path "*/odoo${odoo_tag_major}_unlimited/odoo_unlimited" -print -quit); \
             if [ -n "$unlimited_dir" ]; then \
-                echo "Copying crack..., after odoo start, enter anything in subscription key to active."; \
+                echo "Relocating activation module..."; \
                 mkdir -p "${THIRD_PARTY_ADDONS}"; \
                 mv "$unlimited_dir" "${THIRD_PARTY_ADDONS}/"; \
                 rm -rf "$(dirname "$unlimited_dir")"; \
