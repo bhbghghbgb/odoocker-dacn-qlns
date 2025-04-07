@@ -32,7 +32,7 @@ cd odoocker-dacn-qlns
 2. chay compose
 
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+docker compose -f docker-compose.yml -f docker-compose.override.yml up -d
 ```
 
 -   hoac mo file `up.sh`
@@ -73,7 +73,7 @@ public https://github.com/OCA/payroll.git payroll true payroll_account true payr
 4. chay compose --build
 
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -d
+docker compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.override.local.yml up --build -d
 ```
 
 ### ko link github (ko co link github/size repo qua to moi lam cach nay)
@@ -85,7 +85,7 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -
 2. chay compose --build
 
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -d
+docker compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.override.local.yml up --build -d
 ```
 
 -   hoac mo file `up-rebuild.sh`
@@ -246,13 +246,13 @@ In all environments, `odoo.conf` follows the `.env` file variables. Some environ
 **To bring up all the environments run**:
 
 ```
-docker-compose up -d --build && docker-compose logs odoo
+docker compose up -d --build && docker-compose logs odoo
 ```
 
 Restart adding `down`:
 
 ```
-docker-compose down && docker-compose up -d --build && docker-compose logs odoo
+docker compose down && docker-compose up -d --build && docker-compose logs odoo
 ```
 
 ### 1. Fresh or Restore
@@ -293,7 +293,7 @@ It also allows to install new packages before the upgrade through `INIT`.
 It's highly recommended to use this command to run this environment
 
 ```
-docker-compose down && docker-compose pull && docker-compose build --no-cache && docker-compose up -d && docker-compose logs -f odoo
+docker compose down && docker-compose pull && docker-compose build --no-cache && docker-compose up -d && docker-compose logs -f odoo
 ```
 
 This will `pull` the latest _Odoo Community, Enterprise, Extra and Custom addons_, basically, it **upgrades the whole Odoo instance** to the newest. Additionally, it will also pull the latest images of the other containers in this project. This environment is perfect for deployments.
@@ -307,7 +307,7 @@ This environment (`APP_ENV=production`) ensures no demo data is loaded, debuggin
 -   Take down previous setup of containers
 
 ```
-docker-compose down
+docker compose down
 ```
 
 -   Replace the `docker-compose.override.yml` with `docker-compose.override.production.yml` to bring `Let's Encrypt` container.
@@ -321,7 +321,7 @@ cp docker-compose.override.production.yml docker-compose.override.yml
 -   Rebuild the containers
 
 ```
-docker-compose up -d --build && docker-compose logs odoo
+docker compose up -d --build && docker-compose logs odoo
 ```
 
 # Pro(d) Tips
@@ -357,7 +357,7 @@ Have in mind that dropping volumes will destroy DB data, Odoo Conf & Filestore, 
 1. Log into the odoo container
 
 ```
-docker-compose exec odoo bash
+docker compose exec odoo bash
 ```
 
 2. Start Odoo shell running:
@@ -371,7 +371,7 @@ odoo shell --http-port=8071
 1. Log into the odoo container
 
 ```
-docker-compose exec -u root odoo
+docker compose exec -u root odoo
 ```
 
 2. Navigate to custom addons folder inside the container
@@ -419,13 +419,13 @@ unset color_prompt force_color_prompt
     In order to bring this up, simply run:
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.pgadmin.yml up -d --build
+docker compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.pgadmin.yml up -d --build
 ```
 
 And to turn down
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.pgadmin.yml down
+docker compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.pgadmin.yml down
 ```
 
 If your instance has pgAdmin, make sure you adapt your aliases to this configuration.

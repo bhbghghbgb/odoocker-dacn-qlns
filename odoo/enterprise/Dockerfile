@@ -13,11 +13,11 @@ USER root
 # Extract the addons from the archives
 
 RUN --mount=type=bind,src=./odoo/enterprise/source_archives,target=/tmp/enterprise_source_archives \
-    if ! find /tmp/enterprise_source_archives -name "*.tar.gz" -print0 | grep -q .; then \
+    if ! find /tmp/enterprise_source_archives -name "*.tar.gz" -print0 -quit | grep -q .; then \
         echo "No .tar.gz files found in ./odoo/enterprise/source_archives, expect Community version."; \
     else \
         echo "Extracting addons from .tar.gz files in ./odoo/enterprise/source_archives..., expect Enterprise version."; \
-        find /tmp/enterprise_source_archives -name "*.tar.gz" -print0 | while IFS= read -r -d $'\0' archive; do \
+        find /tmp/enterprise_source_archives -name "*.tar.gz" -print0 -quit | while IFS= read -r -d $'\0' archive; do \
             archive_name=$(basename "$archive" .tar.gz); \
             mkdir -p "/tmp/${archive_name}"; \
             tar -xzf "$archive" -C "/tmp/${archive_name}"; \

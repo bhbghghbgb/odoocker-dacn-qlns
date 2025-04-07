@@ -6,6 +6,8 @@ services:
       - 8070:8070
       - 8071:8071
       - 8072:8072
+    depends_on:
+      - postgres
 
   postgres:
     restart: 'no'
