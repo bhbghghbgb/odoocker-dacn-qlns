@@ -1,7 +1,10 @@
 # Luu y: fork lam do an chuyen nganh odoo 17.0 quan ly nhan su
 
+### default branch: 17.0
+
 ### note module ngoai da cai san
 
+-   `dacn-auto-install` [auto install module dang su dung](#auto-install-module-dang-su-dung)
 -   `payroll` https://github.com/OCA/payroll
 -   `oh_appraisal` https://apps.odoo.com/apps/modules/17.0/oh_appraisal
 -   `hr_performance_evaluator` https://apps.odoo.com/apps/modules/17.0/hr_performance_evaluator

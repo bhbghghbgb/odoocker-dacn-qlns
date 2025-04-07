@@ -1,5 +1,4 @@
 # Read the first word of each line from dacn-auto-install.txt into a Python array
-from ast import literal_eval
 from pprint import pformat
 
 # Read the first word of each line from dacn-auto-install.txt
@@ -7,17 +6,32 @@ with open("dacn-auto-install.txt", "r") as f:
     dependencies = set(line.split()[0] for line in f if line.strip())
 
 # Path to the manifest file
-manifest_base_file = "./custom-addons/dacn-auto-install/__manifest__.base.py"
 manifest_dest_file = "./custom-addons/dacn-auto-install/__manifest__.py"
 
-# Read and parse the manifest file
-with open(manifest_base_file, "r") as f:
-    manifest_content = f.read()
-    manifest_data = literal_eval(manifest_content)
+manifest_data = {
+    "application": False,
+    "author": "DACN QLNS SGU",
+    "auto_install": False,
+    "category": "Customizations",
+    "company": "DACN QLNS SGU",
+    "data": [],
+    "demo": [],
+    "depends": ["base"],
+    "description": "Module nay dung de tu dong cai cac module can thiet khi "
+    "tao database cho do an chuyen nganh quan ly nhan su Odoo.",
+    "images": ["static/description/cover.svg"],
+    "installable": True,
+    "license": "Other OSI approved licence",
+    "live_test_url": "",
+    "maintainer": "DACN QLNS SGU",
+    "name": "DACN QLNS SGU auto-install",
+    "summary": "Auto install modules for DACN QLNS SGU",
+    "version": "17.0.1.0.0",
+    "website": "https://github.com/bhbghghbgb/odoocker-dacn-qlns",
+}
 
 # Update the "depends" key with the new dependencies
-if "depends" in manifest_data:
-    manifest_data["depends"] = list(dependencies)
+manifest_data["depends"] += sorted(dependencies)
 
 # Save the updated manifest file
 with open(manifest_dest_file, "w") as f:
