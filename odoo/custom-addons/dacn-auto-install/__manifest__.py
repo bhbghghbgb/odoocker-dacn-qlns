@@ -19,7 +19,6 @@
                    'hr_recruitment',
                    'hr_skills',
                    'insurance_management_cybro',
-                   'payroll',
                    'project',
                    'survey',
                    'website_hr_recruitment',

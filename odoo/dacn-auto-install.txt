@@ -4,7 +4,6 @@ website_slides eLearning
 hr_skills Skills Management
 website_hr_recruitment Online Jobs
 insurance_management_cybro Insurance Management
-payroll Payroll
 hr Employees
 bsi_employee_badges_and_rewards Employee Badges and Rewards
 hr_disciplinary_tracking Open HRMS Disciplinary Tracking

@@ -4,10 +4,21 @@
 
 ### note module ngoai da cai san
 
--   `dacn-auto-install` [auto install module dang su dung](#auto-install-module-dang-su-dung)
--   `payroll` https://github.com/OCA/payroll
+-   [auto install module dang su dung](#auto-install-module-dang-su-dung) `dacn-auto-install`
+-   https://github.com/OCA/payroll `payroll` `payroll_account` `payroll_hr_public_holidays`
 -   `oh_appraisal` https://apps.odoo.com/apps/modules/17.0/oh_appraisal
 -   `hr_performance_evaluator` https://apps.odoo.com/apps/modules/17.0/hr_performance_evaluator
+-   `hr_disciplinary_tracking` https://apps.odoo.com/apps/modules/17.0/hr_disciplinary_tracking
+-   `insurance_management_cybro` https://apps.odoo.com/apps/modules/17.0/insurance_management_cybro
+-   `bsi_employee_badges_and_rewards` https://apps.odoo.com/apps/modules/17.0/bsi_employee_badges_and_rewards
+
+#### note loi
+
+-   `oh_appraisal` loi add data, nhung co ve la xai duoc
+-   `payroll` and friends bi xung dot voi `hr_payroll` tren enterprise
+-   neu xai community, thi dung thay the:
+    -   `hr_appraisal`: `oh_appraisal`
+    -   `hr_payroll`: `payroll` and friends
 
 ## cai odoo docker (community)
 
@@ -65,7 +76,7 @@ public https://github.com/OCA/payroll.git payroll true payroll_account true payr
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build -d
 ```
 
-### ko link github (neu ko co link github moi lam cach nay)
+### ko link github (ko co link github/size repo qua to moi lam cach nay)
 
 1. tai thu muc module ve bo vao `odoo/extra-addons`, vi du cai het 3 module `payroll` `payroll_account` `payroll_hr_public_holidays` tu https://github.com/OCA/payroll
 
