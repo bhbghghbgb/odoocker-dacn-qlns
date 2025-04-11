@@ -34,3 +34,5 @@ services:
 
   pgadmin:
     restart: 'no'
+    ports:
+      - 5050:80

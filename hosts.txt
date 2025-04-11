@@ -1,0 +1,2 @@
+127.0.0.1 erp.odoocker.test
+127.0.0.1 pgadmin.odoocker.test
