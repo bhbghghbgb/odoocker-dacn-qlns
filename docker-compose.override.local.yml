@@ -8,7 +8,6 @@ services:
       - 8072:8072
     depends_on:
       - postgres
-      - nginx-proxy
 
   postgres:
     restart: 'no'
