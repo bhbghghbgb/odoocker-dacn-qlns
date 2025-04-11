@@ -2,6 +2,10 @@
 
 ### default branch: 17.0
 
+### cham bai bang enterprise !!!
+
+-   trial 1 thang van cham demo app kip
+
 ### note module ngoai da cai san
 
 -   [auto install module dang su dung](#auto-install-module-dang-su-dung) `dacn-auto-install`
@@ -52,6 +56,13 @@ docker compose -f docker-compose.yml -f docker-compose.override.yml up -d
 ```
 odoo
 ```
+
+## xem database
+
+-   container `pgadmin`
+-   phai tao database trong odoo truoc roi moi ket noi duoc (ghi nho `master password` va `database name`)
+-   `master password` va `database name` can de ket noi la lay luc tao db odoo lan dau
+-   tai khoan pgadmin nam trong `.env`
 
 ## cai addon/module/plugin
 
@@ -126,10 +137,6 @@ python dacn-update-auto-install.py
 ## chay nhieu compose stack (vua community vua enterprise)
 
 -   compose phai them `-p <project-name>` bat ky de tach biet ra, neu ko no se rebuild vao stack cu
-
-## xem database
-
--   [PgAdmin](#PgAdmin)
 
 ## End of fork info.
 
